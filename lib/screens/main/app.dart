@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kalco_flutter/navigation/destination.dart';
-import 'package:kalco_flutter/screens/home/home_tab.dart';
+import 'package:kalco_flutter/screens/home/widget/home_screen.dart';
 import 'package:kalco_flutter/screens/profile/profile_screen.dart';
 import 'package:kalco_flutter/screens/search/search_screen.dart';
 
@@ -10,7 +10,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primaryColor: Color(0xFF181818), accentColor: Color(0xFFF29E2E)),
+          primaryColor: Colors.white,
+          primaryColorDark: Colors.white,
+          accentColor: Color(0xff007AFF),
+          textTheme: TextTheme(
+              headline1: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xff000000),
+          ))),
       home: MainScreen(),
     );
   }
@@ -32,14 +39,14 @@ class _MainScreenState extends State<MainScreen>
         top: false,
         child: IndexedStack(
           index: _currentIndex,
-          children: <Widget>[HomeTab(), SearchScreen(), ProfileScreen()],
+          children: <Widget>[HomeScreen(), SearchScreen(), ProfileScreen()],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         backgroundColor: Theme.of(context).primaryColor,
         selectedItemColor: Theme.of(context).accentColor,
-        unselectedItemColor: Colors.white.withOpacity(0.5),
+        unselectedItemColor: Colors.black.withOpacity(0.5),
         onTap: (int index) {
           setState(() {
             _currentIndex = index;

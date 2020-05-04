@@ -9,15 +9,33 @@ class MovieDetails extends StatefulWidget {
 class _MovieDetailsState extends State<MovieDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Movie details'),
-        backgroundColor: Theme.of(context).primaryColor,
-      ),
-      backgroundColor: Theme.of(context).primaryColor,
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text("Movie details screen"),
+    return WillPopScope(
+      child: Scaffold(
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: MediaQuery.of(context).size.height / 3,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: true,
+                    title: Text("Collapsing Toolbar",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                        )),
+                    background: Image.network(
+                      "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                      fit: BoxFit.cover,
+                    )),
+              ),
+            ];
+          },
+          body: Center(
+            child: Text("Sample Text"),
+          ),
+        ),
       ),
     );
   }

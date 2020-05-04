@@ -16,7 +16,11 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       backgroundColor:Theme.of(context).primaryColor,
       body: Container(
-        child: Text('Search screen'),
+        child: MaterialButton(
+          onPressed: () {
+
+          },
+        ),
       ),
     );
   }
