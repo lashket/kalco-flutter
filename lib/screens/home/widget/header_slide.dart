@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/screens/movie_details/movie_details_screen.dart';
 
 class HeaderSlide extends StatefulWidget {
 
@@ -24,10 +23,23 @@ class _HeaderSlideState extends State<HeaderSlide> {
         elevation: 10,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.network(
-            
-            widget.movie.mediumImage,
-            fit: BoxFit.cover,),
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(widget.movie.mediumImage),
+              )
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Theme.of(context).accentColor.withOpacity(0.5), Colors.transparent]
+                )
+              ),
+            ),
+          ),
         ),
       ),
     );
