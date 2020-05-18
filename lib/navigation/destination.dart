@@ -11,6 +11,7 @@ class Destination {
 
 const List<Destination> allDestinations = <Destination>[
   Destination('Сериалы', Icons.movie),
-  Destination('Поиск', Icons.search),
+  Destination('Фильмы', Icons.camera_roll),
+  Destination('IPTV', Icons.airplay),
   Destination('Профиль', Icons.person)
 ];

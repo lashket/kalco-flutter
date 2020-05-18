@@ -26,7 +26,7 @@ class _HeaderSliderState extends State<HeaderSlider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 2.5,
       child: _buildSlider(widget.mainScreenBloc),
     );
   }
@@ -56,11 +56,10 @@ class _HeaderSliderState extends State<HeaderSlider> {
 
   Widget _buildSliderView(List<Movie> movies) {
     return Padding(
-      padding: const EdgeInsets.only(top: 24),
+      padding: const EdgeInsets.only(top: 0),
       child: PageView(
         controller: PageController(
             initialPage: 1,
-            viewportFraction: 0.8
         ),
         children: movies.map((Movie movie) => HeaderSlide(movie)).toList(),
         physics: BouncingScrollPhysics(),

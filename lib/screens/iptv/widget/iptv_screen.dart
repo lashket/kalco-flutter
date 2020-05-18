@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SearchScreen extends StatefulWidget {
+class IPTVScreen extends StatefulWidget {
 
   @override
-  _SearchScreenState createState() => _SearchScreenState();
+  _IPTVScreenState createState() => _IPTVScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _IPTVScreenState extends State<IPTVScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search screen'),
+        title: Text('IPTV screen'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       backgroundColor:Theme.of(context).primaryColor,
       body: Container(
-        child: MaterialButton(
-          onPressed: () {
-
-          },
-        ),
+        child: Text('IPTV screen'),
       ),
     );
   }

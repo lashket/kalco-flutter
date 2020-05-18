@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kalco_flutter/domain/models/section.dart';
+import 'package:kalco_flutter/screens/movie_details/movie_details_screen.dart';
 
 class SectionView extends StatefulWidget {
   Section section;
@@ -29,7 +30,7 @@ class _SectionViewState extends State<SectionView> {
           child: Text(
             widget.section.sectionName,
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.w500
             ),
@@ -47,18 +48,24 @@ class _SectionViewState extends State<SectionView> {
                   left: 4,
                   right: 4
                 ),
-                child: Container(
-                  width: 120.0,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    elevation: 2,
-                    child: ClipRRect(
-
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        widget.section.movies[index].mediumImage, fit: BoxFit.cover,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => MovieDetails()
+                    ));
+                  },
+                  child: Container(
+                    width: 120.0,
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 2,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child:  Image.network(
+                            widget.section.movies[index].mediumImage, fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

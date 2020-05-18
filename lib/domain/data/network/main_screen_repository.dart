@@ -1,36 +1,26 @@
 import 'dart:convert';
 
-import 'package:kalco_flutter/domain/data/network/main_screen_service.dart';
+import 'package:kalco_flutter/domain/data/network/kalco_remote_service.dart';
+import 'package:kalco_flutter/domain/data/parsers/response_to_list_converters.dart';
 import 'package:kalco_flutter/domain/models/movie.dart';
 import 'package:kalco_flutter/domain/models/section.dart';
 
 class MainScreenRepository {
-  final MainScreenService mainScreenService = MainScreenService();
+  final KalcoRemoteService kalcoRemoteService = KalcoRemoteService();
 
   Future<List<Section>> fetchSections() async {
 
-    final response = await mainScreenService.get("main/sections");
+    final response = await kalcoRemoteService.get("main/sections");
 
-    return parseSections(response);
+    return ResponseToListConverters.instance.parseSections(response);
   }
 
   Future<List<Movie>> fetchHeaderMovies() async {
 
-    final response = await mainScreenService.get("main/header");
+    final response = await kalcoRemoteService.get("main/header");
 
-    return parseMovies(response);
+    return ResponseToListConverters.instance.parseMovies(response);
 
   }
-
-  List<Section> parseSections(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-
-    return parsed.map<Section>((json) => Section.fromJson(json)).toList();
-  }
-
-  List<Movie> parseMovies(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-
-    return parsed.map<Movie>((json) => Movie.fromJson(json)).toList();
-  }
+  
 }

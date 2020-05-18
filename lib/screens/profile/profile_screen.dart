@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kalco_flutter/screens/auth_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
 
@@ -9,15 +10,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile screen'),
-        backgroundColor: Theme.of(context).primaryColor,
-      ),
-      backgroundColor:Theme.of(context).primaryColor,
-      body: Container(
-        child: Text('Profile screen'),
-      ),
-    );
+    return AuthScreen();
   }
 }
