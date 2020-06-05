@@ -11,7 +11,7 @@ class MainScreenRepository {
   Future<List<Section>> fetchSections() async {
 
     final response = await kalcoRemoteService.get("main/sections");
-
+    print("sections response $response");
     return ResponseToListConverters.instance.parseSections(response);
   }
 

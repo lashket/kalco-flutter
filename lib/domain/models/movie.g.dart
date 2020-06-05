@@ -12,6 +12,7 @@ Movie _$MovieFromJson(Map<String, dynamic> json) {
     id: json['id'] as int,
     year: json['year'] as String,
     mediumImage: json['image_md'] as String,
+    description: json['description'] as String,
   );
 }
 
@@ -19,5 +20,6 @@ Map<String, dynamic> _$MovieToJson(Movie instance) => <String, dynamic>{
       'name': instance.name,
       'id': instance.id,
       'year': instance.year,
+      'description': instance.description,
       'image_md': instance.mediumImage,
     };

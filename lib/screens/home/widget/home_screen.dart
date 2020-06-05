@@ -4,7 +4,6 @@ import 'package:kalco_flutter/base/bloc_provider.dart';
 import 'package:kalco_flutter/screens/home/bloc/main_screen_bloc.dart';
 import 'package:kalco_flutter/screens/home/widget/header_slider.dart';
 import 'package:kalco_flutter/screens/home/widget/section_list.dart';
-import 'package:kalco_flutter/screens/movie_details/movie_details_screen.dart';
 import 'package:kalco_flutter/screens/search/widget/search_input.dart';
 import 'package:kalco_flutter/screens/search/widget/search_screen.dart';
 

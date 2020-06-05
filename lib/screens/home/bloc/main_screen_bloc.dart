@@ -25,7 +25,7 @@ class MainScreenBloc implements Bloc {
       List<Section> sections = await _repository.fetchSections();
       sectionsSinkStream.add(ApiResponse.completed(sections));
     } catch(e) {
-      sectionsSinkStream.add(ApiResponse.error("Error"));
+      sectionsSinkStream.add(ApiResponse.error(e.toString()));
     }
   }
 
@@ -35,8 +35,7 @@ class MainScreenBloc implements Bloc {
       List<Movie> movies = await _repository.fetchHeaderMovies();
       moviesSinkStream.add(ApiResponse.completed(movies));
     } catch(e) {
-      print('Header movies loading error $e');
-      moviesSinkStream.add(ApiResponse.error("Error"));
+      moviesSinkStream.add(ApiResponse.error(e.toString()));
     }
   }
 

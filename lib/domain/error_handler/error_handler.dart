@@ -7,10 +7,9 @@ import 'exceptions.dart';
 class ErrorHandler {
 
   dynamic returnResponse(http.Response response) {
-    print(response.body.toString());
     switch (response.statusCode) {
       case 200:
-        var responseJson = response.body.toString();
+        var responseJson = json.decode(response.body.toString());
         return responseJson;
       case 400:
         throw BadRequestException(response.body.toString());

@@ -12,7 +12,6 @@ class KalcoRemoteService {
     var responseJson;
     try {
       final response = await http.get(BASE_URL + url,);
-      print('$url Response is ${response.body}');
       responseJson = ErrorHandler().returnResponse(response);
     } on Exception {
 

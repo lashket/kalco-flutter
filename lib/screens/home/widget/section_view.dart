@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kalco_flutter/domain/models/section.dart';
-import 'package:kalco_flutter/screens/movie_details/movie_details_screen.dart';
+import 'package:kalco_flutter/screens/movie_details/widget/movie_details_screen.dart';
 
 class SectionView extends StatefulWidget {
   Section section;
@@ -51,7 +51,7 @@ class _SectionViewState extends State<SectionView> {
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => MovieDetails()
+                        builder: (context) => MovieDetails(id: widget.section.movies[index].id,)
                     ));
                   },
                   child: Container(

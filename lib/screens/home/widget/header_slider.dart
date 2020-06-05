@@ -3,7 +3,6 @@ import 'package:kalco_flutter/domain/models/api_response.dart';
 import 'package:kalco_flutter/domain/models/movie.dart';
 import 'package:kalco_flutter/screens/home/bloc/main_screen_bloc.dart';
 import 'package:kalco_flutter/screens/home/widget/header_slide.dart';
-import 'package:kalco_flutter/screens/movie_details/movie_details_screen.dart';
 
 class HeaderSlider extends StatefulWidget {
 
