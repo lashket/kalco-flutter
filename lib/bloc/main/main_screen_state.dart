@@ -1,0 +1,55 @@
+import 'package:equatable/equatable.dart';
+import 'package:kalco_flutter/domain/models/movie.dart';
+import 'package:kalco_flutter/domain/models/section.dart';
+
+abstract class MainScreenState extends Equatable {
+
+  const MainScreenState();
+
+  @override
+
+  List<Object> get props => [];
+
+}
+
+class HeaderItemsLoading extends MainScreenState {
+
+}
+
+class SectionsLoading extends MainScreenState {
+
+}
+
+class MainScreenInitial extends MainScreenState {}
+
+class HeaderItemsLoaded extends MainScreenState {
+
+  final List<Movie> headerItems;
+
+  const HeaderItemsLoaded({this.headerItems});
+
+  @override
+
+  List<Object> get props => [
+    headerItems
+  ];
+
+}
+
+class SectionsLoaded extends MainScreenState {
+
+  final List<Section> sectionItems;
+
+  const SectionsLoaded({this.sectionItems});
+
+  @override
+
+  List<Object> get props => [
+    sectionItems
+  ];
+
+}
+
+class SectionLoadingError extends MainScreenState {}
+
+class HeaderItemsLoadingError extends MainScreenState {}

@@ -1,25 +1,27 @@
 import 'dart:convert';
 
 import 'package:kalco_flutter/domain/data/network/kalco_remote_service.dart';
+import 'package:kalco_flutter/domain/data/network/main_screen_remote_service.dart';
 import 'package:kalco_flutter/domain/data/parsers/response_to_list_converters.dart';
 import 'package:kalco_flutter/domain/models/movie.dart';
 import 'package:kalco_flutter/domain/models/section.dart';
 
 class MainScreenRepository {
-  final KalcoRemoteService kalcoRemoteService = KalcoRemoteService();
+  final  _remoteService = MainScreenRemoteService();
 
   Future<List<Section>> fetchSections() async {
 
-    final response = await kalcoRemoteService.get("main/sections");
-    print("sections response $response");
-    return ResponseToListConverters.instance.parseSections(response);
+    final response = await _remoteService.getSectionsList();
+
+    return response;
+
   }
 
   Future<List<Movie>> fetchHeaderMovies() async {
 
-    final response = await kalcoRemoteService.get("main/header");
+    final response = await _remoteService.getHeaderMovies();
 
-    return ResponseToListConverters.instance.parseMovies(response);
+    return response;
 
   }
   

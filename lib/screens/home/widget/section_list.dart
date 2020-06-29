@@ -1,50 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/base/bloc_provider.dart';
+import 'package:kalco_flutter/bloc/main/main_screen_bloc.dart';
+import 'package:kalco_flutter/bloc/main/main_screen_event.dart';
+import 'package:kalco_flutter/bloc/main/main_screen_state.dart';
 import 'package:kalco_flutter/domain/models/api_response.dart';
 import 'package:kalco_flutter/domain/models/section.dart';
-import 'package:kalco_flutter/screens/home/bloc/main_screen_bloc.dart';
 import 'package:kalco_flutter/screens/home/widget/section_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SectionsList extends StatefulWidget {
-  final MainScreenBloc mainScreenBloc;
-
-  SectionsList(this.mainScreenBloc);
-
-  @override
-  _SectionsListState createState() => _SectionsListState();
-}
-
-class _SectionsListState extends State<SectionsList> {
-  @override
-  void initState() {
-    widget.mainScreenBloc.getSections();
-    super.initState();
-  }
+class SectionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildSectionList(widget.mainScreenBloc);
+    return _buildSectionList(context);
   }
 
-  Widget _buildSectionList(MainScreenBloc bloc) {
-    return StreamBuilder<ApiResponse<List<Section>>>(
-      stream: bloc.sectionsStream,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          switch (snapshot.data.status) {
-            case Status.LOADING:
-              return Text('Loading');
-              break;
-            case Status.COMPLETED:
-              return _buildSectionsListView(snapshot.data.data);
-              break;
-            case Status.ERROR:
-              return Text(snapshot.data.message);
-              break;
-          }
-        }
-        return Container();
+  Widget _buildSectionList(BuildContext context) {
+    BlocProvider.of<MainScreenBloc>(context).add(LoadSectionsEvent());
+    return BlocListener<MainScreenBloc, MainScreenState> (
+      listener: (context, state) {
+
       },
+      child: BlocBuilder<MainScreenBloc, MainScreenState>(
+        builder: (context, state) {
+          if(state is MainScreenInitial) {
+
+          }
+          if(state is SectionsLoaded) {
+            return _buildSectionsListView(state.sectionItems);
+          }
+          return Container();
+        },
+      ),
     );
   }
 
