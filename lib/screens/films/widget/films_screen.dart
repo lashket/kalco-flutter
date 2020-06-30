@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:vix/widgets/under_construction.dart';
 
 class FilmsScreen extends StatefulWidget {
 
@@ -21,9 +23,7 @@ class _FilmsScreenState extends State<FilmsScreen> {
         backgroundColor: Theme.of(context).primaryColor,
       ),
       backgroundColor:Theme.of(context).primaryColor,
-      body: Container(
-        child: Text('Films screen'),
-      ),
+      body: UnderConstruction()
     );
   }
 }

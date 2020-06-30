@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vix/widgets/under_construction.dart';
 
 class IPTVScreen extends StatefulWidget {
 
@@ -15,9 +16,7 @@ class _IPTVScreenState extends State<IPTVScreen> {
         backgroundColor: Theme.of(context).primaryColor,
       ),
       backgroundColor:Theme.of(context).primaryColor,
-      body: Container(
-        child: Text('IPTV screen'),
-      ),
+      body: UnderConstruction(),
     );
   }
 }
