@@ -13,18 +13,26 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   @override
   Stream<MainScreenState> mapEventToState(MainScreenEvent event) async* {
 
-    if(event is LoadHeaderSerials) {
-      yield HeaderItemsLoading();
-      final _headerSerials = await _repository.fetchHeaderMovies();
-      print('header serials loaded');
-      yield HeaderItemsLoaded(headerItems: _headerSerials);
-    }
-
-    if(event is LoadSectionsEvent) {
-      yield SectionsLoading();
-      final _sections = await _repository.fetchSections();
-      print('sections loaded');
-      yield SectionsLoaded(sectionItems: _sections);
+//    if(event is LoadSectionsEvent) {
+//      yield SectionsLoading();
+//      final _sections = await _repository.fetchSections();
+//      yield SectionsLoaded(sectionItems: _sections);
+//    }
+//
+//    if(event is LoadHeaderSerials) {
+//      yield HeaderItemsLoading();
+//      final _headerSerials = await _repository.fetchHeaderMovies();
+//      yield HeaderItemsLoaded(headerItems: _headerSerials);
+//    }
+    if (event is LoadingInfo) {
+      final result = await Future.wait([
+        _repository.fetchSections(),
+       _repository.fetchHeaderMovies(),
+      ]);
+      yield ItemsLoaded(
+        sectionItems: result[0],
+        movies: result[1]
+      );
     }
   }
 }

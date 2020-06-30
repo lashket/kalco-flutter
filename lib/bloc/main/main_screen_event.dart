@@ -30,3 +30,9 @@ class LoadSectionsEvent extends MainScreenEvent {
   List<Object> get props => [];
 
 }
+
+class LoadingInfo extends MainScreenEvent {
+
+  const LoadingInfo();
+
+}

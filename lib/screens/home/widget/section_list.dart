@@ -9,30 +9,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SectionsList extends StatelessWidget {
 
+  final List<Section> sections;
+
+  const SectionsList({this.sections});
+
   @override
   Widget build(BuildContext context) {
-    return _buildSectionList(context);
+    return _buildSectionsListView(sections);
   }
 
-  Widget _buildSectionList(BuildContext context) {
-    BlocProvider.of<MainScreenBloc>(context).add(LoadSectionsEvent());
-    return BlocListener<MainScreenBloc, MainScreenState> (
-      listener: (context, state) {
-
-      },
-      child: BlocBuilder<MainScreenBloc, MainScreenState>(
-        builder: (context, state) {
-          if(state is MainScreenInitial) {
-
-          }
-          if(state is SectionsLoaded) {
-            return _buildSectionsListView(state.sectionItems);
-          }
-          return Container();
-        },
-      ),
-    );
-  }
 
   Widget _buildSectionsListView(List<Section> sections) {
     return Column(

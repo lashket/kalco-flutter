@@ -7,7 +7,6 @@ abstract class MainScreenState extends Equatable {
   const MainScreenState();
 
   @override
-
   List<Object> get props => [];
 
 }
@@ -22,14 +21,13 @@ class SectionsLoading extends MainScreenState {
 
 class MainScreenInitial extends MainScreenState {}
 
-class HeaderItemsLoaded extends MainScreenState {
+class HeaderItemsLoaded  extends MainScreenState {
 
   final List<Movie> headerItems;
 
   const HeaderItemsLoaded({this.headerItems});
 
   @override
-
   List<Object> get props => [
     headerItems
   ];
@@ -43,9 +41,22 @@ class SectionsLoaded extends MainScreenState {
   const SectionsLoaded({this.sectionItems});
 
   @override
-
   List<Object> get props => [
     sectionItems
+  ];
+
+}
+
+class ItemsLoaded extends MainScreenState {
+
+  final List<Section> sectionItems;
+  final List<Movie> movies;
+  const ItemsLoaded({this.sectionItems, this.movies});
+
+  @override
+  List<Object> get props => [
+    sectionItems,
+    movies
   ];
 
 }
