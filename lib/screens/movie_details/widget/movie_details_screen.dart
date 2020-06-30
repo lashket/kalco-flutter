@@ -1,13 +1,13 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/base/bloc_provider.dart';
-import 'package:kalco_flutter/domain/models/api_response.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/screens/movie_details/bloc/movie_details_screen_bloc.dart';
-import 'package:kalco_flutter/screens/movie_details/widget/body.dart';
-import 'package:kalco_flutter/screens/movie_details/widget/header.dart';
-import 'package:kalco_flutter/widgets/full_screen_view.dart';
+import 'package:vix/base/bloc_provider.dart';
+import 'package:vix/domain/models/api_response.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/screens/movie_details/bloc/movie_details_screen_bloc.dart';
+import 'package:vix/screens/movie_details/widget/body.dart';
+import 'package:vix/screens/movie_details/widget/header.dart';
+import 'package:vix/widgets/full_screen_view.dart';
 
 class MovieDetails extends StatefulWidget {
 

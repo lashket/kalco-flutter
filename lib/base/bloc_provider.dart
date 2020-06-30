@@ -1,6 +1,6 @@
 
 import 'package:flutter/widgets.dart';
-import 'package:kalco_flutter/base/bloc.dart';
+import 'package:vix/base/bloc.dart';
 
 /*
  * Copyright (c) 2019 Razeware LLC

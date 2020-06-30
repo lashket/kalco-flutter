@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/domain/models/section.dart';
-import 'package:kalco_flutter/screens/movie_details/widget/movie_details_screen.dart';
+import 'package:vix/domain/models/section.dart';
+import 'package:vix/screens/movie_details/widget/movie_details_screen.dart';
 
 class SectionView extends StatefulWidget {
   Section section;

@@ -1,10 +1,10 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/widgets/flat_button.dart';
-import 'package:kalco_flutter/widgets/logo.dart';
-import 'package:kalco_flutter/widgets/raised_button.dart';
-import 'package:kalco_flutter/widgets/text_input.dart';
+import 'package:vix/widgets/flat_button.dart';
+import 'package:vix/widgets/logo.dart';
+import 'package:vix/widgets/raised_button.dart';
+import 'package:vix/widgets/text_input.dart';
 
 class AuthScreen extends StatefulWidget {
   @override

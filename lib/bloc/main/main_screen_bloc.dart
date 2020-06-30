@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_event.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_state.dart';
-import 'package:kalco_flutter/domain/repository/main_screen_repository.dart';
+import 'package:vix/bloc/main/main_screen_event.dart';
+import 'package:vix/bloc/main/main_screen_state.dart';
+import 'package:vix/domain/repository/main_screen_repository.dart';
 
 class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
 

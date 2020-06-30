@@ -1,4 +1,4 @@
-name: kalco_flutter
+name: vix
 description: Kalco flutter application
 
 # The following defines the version and build number for your application.
@@ -20,6 +20,7 @@ dependencies:
   json_annotation: ^3.0.1
   http: ^0.12.1
   rxdart: ^0.24.0
+  shared_preferences: 0.5.7
   flutter:
     sdk: flutter
 

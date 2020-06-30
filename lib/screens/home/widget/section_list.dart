@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_bloc.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_event.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_state.dart';
-import 'package:kalco_flutter/domain/models/api_response.dart';
-import 'package:kalco_flutter/domain/models/section.dart';
-import 'package:kalco_flutter/screens/home/widget/section_view.dart';
+import 'package:vix/bloc/main/main_screen_bloc.dart';
+import 'package:vix/bloc/main/main_screen_event.dart';
+import 'package:vix/bloc/main/main_screen_state.dart';
+import 'package:vix/domain/models/api_response.dart';
+import 'package:vix/domain/models/section.dart';
+import 'package:vix/screens/home/widget/section_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SectionsList extends StatelessWidget {

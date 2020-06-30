@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_bloc.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_event.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_state.dart';
-import 'package:kalco_flutter/screens/home/widget/header_slider.dart';
-import 'package:kalco_flutter/screens/home/widget/section_list.dart';
-import 'package:kalco_flutter/screens/search/widget/search_input.dart';
+import 'package:vix/bloc/main/main_screen_bloc.dart';
+import 'package:vix/bloc/main/main_screen_event.dart';
+import 'package:vix/bloc/main/main_screen_state.dart';
+import 'package:vix/screens/home/widget/header_slider.dart';
+import 'package:vix/screens/home/widget/section_list.dart';
+import 'package:vix/screens/search/widget/search_input.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:kalco_flutter/screens/search/widget/search_screen.dart';
+import 'package:vix/screens/search/widget/search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

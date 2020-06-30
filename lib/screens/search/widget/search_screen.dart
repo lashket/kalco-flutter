@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kalco_flutter/base/bloc_provider.dart';
-import 'package:kalco_flutter/screens/search/bloc/search_screen_bloc.dart';
-import 'package:kalco_flutter/screens/search/widget/filter_bottom_sheet.dart';
-import 'package:kalco_flutter/screens/search/widget/search_input.dart';
+import 'package:vix/base/bloc_provider.dart';
+import 'package:vix/screens/search/bloc/search_screen_bloc.dart';
+import 'package:vix/screens/search/widget/filter_bottom_sheet.dart';
+import 'package:vix/screens/search/widget/search_input.dart';
 
 class SearchScreen extends StatefulWidget {
   @override

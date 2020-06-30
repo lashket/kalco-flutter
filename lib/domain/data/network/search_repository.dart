@@ -1,7 +1,7 @@
-import 'package:kalco_flutter/domain/data/network/kalco_remote_service.dart';
-import 'package:kalco_flutter/domain/data/parsers/response_to_list_converters.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/utils/helpers.dart';
+import 'package:vix/domain/data/network/kalco_remote_service.dart';
+import 'package:vix/domain/data/parsers/response_to_list_converters.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/utils/helpers.dart';
 
 class SearchRepository {
 

@@ -1,5 +1,5 @@
-import 'package:kalco_flutter/domain/data/network/kalco_remote_service.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
+import 'package:vix/domain/data/network/kalco_remote_service.dart';
+import 'package:vix/domain/models/movie.dart';
 
 class MoviesRepository {
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
+import 'package:vix/domain/models/movie.dart';
 
 class Body extends StatefulWidget {
 

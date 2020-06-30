@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_bloc.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_event.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_state.dart';
-import 'package:kalco_flutter/domain/models/api_response.dart';
+import 'package:vix/bloc/main/main_screen_bloc.dart';
+import 'package:vix/bloc/main/main_screen_event.dart';
+import 'package:vix/bloc/main/main_screen_state.dart';
+import 'package:vix/domain/models/api_response.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/screens/home/widget/header_slide.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/screens/home/widget/header_slide.dart';
 
 class HeaderSlider extends StatelessWidget {
 

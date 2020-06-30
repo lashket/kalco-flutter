@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kalco_flutter/bloc/main/main_screen_bloc.dart';
-import 'package:kalco_flutter/navigation/destination.dart';
-import 'package:kalco_flutter/screens/auth_screen.dart';
-import 'package:kalco_flutter/screens/films/widget/films_screen.dart';
-import 'package:kalco_flutter/screens/home/widget/home_screen.dart';
-import 'package:kalco_flutter/screens/iptv/widget/iptv_screen.dart';
-import 'package:kalco_flutter/screens/profile/profile_screen.dart';
-import 'package:kalco_flutter/screens/search/widget/search_screen.dart';
+import 'package:vix/bloc/main/main_screen_bloc.dart';
+import 'package:vix/navigation/destination.dart';
+import 'package:vix/screens/auth_screen.dart';
+import 'package:vix/screens/films/widget/films_screen.dart';
+import 'package:vix/screens/home/widget/home_screen.dart';
+import 'package:vix/screens/iptv/widget/iptv_screen.dart';
+import 'package:vix/screens/profile/profile_screen.dart';
+import 'package:vix/screens/search/widget/search_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatelessWidget {

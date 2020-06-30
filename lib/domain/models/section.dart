@@ -1,8 +1,8 @@
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kalco_flutter/domain/models/category.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/domain/models/tag.dart';
+import 'package:vix/domain/models/category.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/domain/models/tag.dart';
 part 'section.g.dart';
 
 @JsonSerializable()

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:kalco_flutter/base/bloc.dart';
-import 'package:kalco_flutter/domain/data/network/search_repository.dart';
-import 'package:kalco_flutter/domain/models/api_response.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
+import 'package:vix/base/bloc.dart';
+import 'package:vix/domain/data/network/search_repository.dart';
+import 'package:vix/domain/models/api_response.dart';
+import 'package:vix/domain/models/movie.dart';
 
 class SearchScreenBloc implements Bloc {
 

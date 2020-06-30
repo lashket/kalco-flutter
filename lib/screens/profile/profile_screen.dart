@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kalco_flutter/screens/auth_screen.dart';
+import 'package:vix/screens/auth_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
 

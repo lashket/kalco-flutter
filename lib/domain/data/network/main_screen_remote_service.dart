@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/domain/models/section.dart';
-import 'package:kalco_flutter/utils/constants.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/domain/models/section.dart';
+import 'package:vix/utils/constants.dart';
 import 'package:http/http.dart' as http;
 
 class MainScreenRemoteService {

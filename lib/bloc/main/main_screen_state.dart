@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:kalco_flutter/domain/models/movie.dart';
-import 'package:kalco_flutter/domain/models/section.dart';
+import 'package:vix/domain/models/movie.dart';
+import 'package:vix/domain/models/section.dart';
 
 abstract class MainScreenState extends Equatable {
 
