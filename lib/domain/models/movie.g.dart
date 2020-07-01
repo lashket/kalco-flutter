@@ -13,6 +13,10 @@ Movie _$MovieFromJson(Map<String, dynamic> json) {
     year: json['year'] as String,
     mediumImage: json['image_md'] as String,
     description: json['description'] as String,
+    seasons: (json['season'] as List)
+        ?.map((e) =>
+            e == null ? null : Season.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -22,4 +26,5 @@ Map<String, dynamic> _$MovieToJson(Movie instance) => <String, dynamic>{
       'year': instance.year,
       'description': instance.description,
       'image_md': instance.mediumImage,
+      'season': instance.seasons,
     };
