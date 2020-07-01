@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vix/bloc/main/main_screen_bloc.dart';
+import 'package:vix/bloc/movie/movie_screen_bloc.dart';
 import 'package:vix/navigation/destination.dart';
 import 'package:vix/screens/auth_screen.dart';
 import 'package:vix/screens/films/widget/films_screen.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<MainScreenBloc>(create: (context) => MainScreenBloc()),
+        BlocProvider<MovieScreenBloc>(create: (context) => MovieScreenBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

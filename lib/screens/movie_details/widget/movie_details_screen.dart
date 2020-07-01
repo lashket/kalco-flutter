@@ -1,75 +1,46 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:vix/base/bloc_provider.dart';
+import 'package:vix/bloc/movie/movie_screen_bloc.dart';
+import 'package:vix/bloc/movie/movie_screen_event.dart';
+import 'package:vix/bloc/movie/movie_screen_state.dart';
 import 'package:vix/domain/models/api_response.dart';
 import 'package:vix/domain/models/movie.dart';
-import 'package:vix/screens/movie_details/bloc/movie_details_screen_bloc.dart';
 import 'package:vix/screens/movie_details/widget/body.dart';
 import 'package:vix/screens/movie_details/widget/header.dart';
 import 'package:vix/widgets/full_screen_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MovieDetails extends StatefulWidget {
+class MovieDetails extends StatelessWidget {
 
-  int id;
+  final int id;
 
   MovieDetails({this.id});
 
   @override
-  _MovieDetailsState createState() => _MovieDetailsState();
-}
-
-class _MovieDetailsState extends State<MovieDetails> {
-
-  MovieDetailsBloc bloc;
-
-  @override
-  void initState() {
-    bloc = MovieDetailsBloc();
-    bloc.getMovie(widget.id);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    bloc.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return BlocProvider<MovieDetailsBloc>(
-      bloc: bloc,
-      child: Scaffold(
+    return  Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
         body: _buildPage(),
-      )
     );
   }
 
   Widget _buildPage() {
-    return StreamBuilder<ApiResponse<Movie>>(
-      stream: bloc.movieStream,
-      builder: (context, snapshot){
-        if(snapshot.hasData) {
-          switch (snapshot.data.status) {
-            case Status.LOADING:
-              return FullScreenErrorView(text: snapshot.data.message,);
-              break;
-            case Status.COMPLETED:
-              return _buildPageView(snapshot.data.data);
-              break;
-            case Status.ERROR:
-              return FullScreenErrorView(text: snapshot.data.message,);
-              break;
-          }
+    return BlocBuilder<MovieScreenBloc, MovieScreenState> (
+      builder: (context, state) {
+        if(state is MovieInitial) {
+          BlocProvider.of<MovieScreenBloc>(context).add(LoadMovie(id: id));
         }
-        return Center(child: CircularProgressIndicator());
+        if(state is MovieLoaded) {
+          return _buildPageView(state.movie, context);
+        }
+        if(state is MovieLoading) {
+          return Center(child: CircularProgressIndicator());
+        }
+        return Container();
       },
     );
   }
 
-  Widget _buildPageView(Movie movie) {
+  Widget _buildPageView(Movie movie, BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         heroTag: "play_btn",
