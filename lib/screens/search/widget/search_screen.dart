@@ -25,6 +25,7 @@ class _SearchScreenState extends State<SearchScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
+          heroTag: "fab",
           backgroundColor: Theme.of(context).accentColor,
           child: Icon(
             Icons.filter_list,

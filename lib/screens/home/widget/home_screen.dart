@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          heroTag: "search_screen_btn",
+          heroTag: "fab",
           child: Icon(
             Icons.search,
             color: Colors.white,

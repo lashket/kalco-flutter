@@ -20,10 +20,13 @@ class SeasonItem extends StatelessWidget {
         child: InkWell(
           onTap: () {
             showModalBottomSheet(
-              isScrollControlled: true,
+                isDismissible: true,
+                isScrollControlled: true,
                 context: context,
                 builder: (BuildContext context) {
-                  return EpisodesBottomSheet(episodes: season.episodes,);
+                  return EpisodesBottomSheet(
+                    episodes: season.episodes,
+                  );
                 });
           },
           child: Container(

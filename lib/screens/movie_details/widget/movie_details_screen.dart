@@ -17,6 +17,7 @@ class MovieDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<MovieScreenBloc>(context).add(LoadMovie(id: id));
     return  Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
         body: _buildPage(),
@@ -27,7 +28,7 @@ class MovieDetails extends StatelessWidget {
     return BlocBuilder<MovieScreenBloc, MovieScreenState> (
       builder: (context, state) {
         if(state is MovieInitial) {
-          BlocProvider.of<MovieScreenBloc>(context).add(LoadMovie(id: id));
+
         }
         if(state is MovieLoaded) {
           return _buildPageView(state.movie, context);
