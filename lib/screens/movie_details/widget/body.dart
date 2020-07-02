@@ -19,13 +19,16 @@ class Body extends StatelessWidget {
           ),
         ),
         SliverGrid(
-
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
+            childAspectRatio: 3
           ),
           delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return SeasonItem(season: movie.seasons[index],);
+                return Padding(
+                  padding: _gridItemsGeometry(index, 2),
+                  child: SeasonItem(season: movie.seasons[index],),
+                );
               },
             childCount: movie.seasons.length,
           ),
@@ -43,6 +46,14 @@ class Body extends StatelessWidget {
           fontSize: 14.0
       ),
     );
+  }
+
+  EdgeInsetsGeometry _gridItemsGeometry(int index, int axisCount) {
+    if(index % axisCount == 0) {
+      return EdgeInsets.only(left: 16);
+    }else {
+      return EdgeInsets.only(right: 16);
+    }
   }
 
 }
