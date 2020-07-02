@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vix/screens/auth_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
-
-  @override
-  _ProfileScreenState createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
+class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthScreen();
