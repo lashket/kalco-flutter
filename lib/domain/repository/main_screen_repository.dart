@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:vix/domain/data/network/kalco_remote_service.dart';
 import 'package:vix/domain/data/network/main_screen_remote_service.dart';
 import 'package:vix/domain/data/parsers/response_to_list_converters.dart';
 import 'package:vix/domain/models/movie.dart';
