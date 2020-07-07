@@ -17,7 +17,7 @@ class PlayerScreen extends StatefulWidget {
 }
 
 class _PlayerScreenState extends State<PlayerScreen> {
-
+  
   VideoPlayerController _playerController;
 
   @override
