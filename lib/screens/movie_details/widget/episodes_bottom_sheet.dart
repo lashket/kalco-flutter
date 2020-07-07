@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vix/domain/models/episode.dart';
+import 'package:vix/screens/player/player_screen.dart';
 
 class EpisodesBottomSheet extends StatelessWidget {
   final List<Episode> episodes;
@@ -27,7 +28,7 @@ class EpisodesBottomSheet extends StatelessWidget {
             controller: myscrollController,
             itemCount: episodes.length,
             itemBuilder: (BuildContext context, int index) {
-              return _episodeItem(episodes[index]);
+              return _episodeItem(episodes[index], context);
             },
           ),
         );
@@ -35,13 +36,20 @@ class EpisodesBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _episodeItem(Episode episode) {
+  Widget _episodeItem(Episode episode, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Container(
-        child: Text(
-          episode.name,
-          style: TextStyle(color: Colors.white, fontSize: 18),
+      child: InkWell(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => PlayerScreen(episode: episode,)
+          ));
+        },
+        child: Container(
+          child: Text(
+            episode.name,
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
         ),
       ),
     );

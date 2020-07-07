@@ -6,7 +6,7 @@ part 'resolution.g.dart';
 class Resolution {
 
   String url;
-  String resolution;
+  int resolution;
 
   Resolution({this.url, this.resolution});
 
