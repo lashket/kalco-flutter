@@ -52,7 +52,14 @@ class _PlayerScreenState extends State<PlayerScreen> {
               color: Theme.of(context).primaryColor,
               child: AspectRatio(
                 aspectRatio: _playerController.value.aspectRatio,
-                child: VideoPlayer(_playerController),
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    VideoPlayer(_playerController),
+                    _PlayPauseOverlay(controller: _playerController,),
+                    VideoProgressIndicator(_playerController, allowScrubbing: true),
+                  ],
+                ),
               ),
             )
                 : Container(
@@ -62,6 +69,44 @@ class _PlayerScreenState extends State<PlayerScreen> {
         }
         return Container();
       },
+    );
+  }
+
+
+
+}
+
+class _PlayPauseOverlay extends StatelessWidget {
+  const _PlayPauseOverlay({Key key, this.controller}) : super(key: key);
+
+  final VideoPlayerController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        AnimatedSwitcher(
+          duration: Duration(milliseconds: 50),
+          reverseDuration: Duration(milliseconds: 200),
+          child: controller.value.isPlaying
+              ? SizedBox.shrink()
+              : Container(
+            color: Colors.black26,
+            child: Center(
+              child: Icon(
+                Icons.play_arrow,
+                color: Colors.white,
+                size: 100.0,
+              ),
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            controller.value.isPlaying ? controller.pause() : controller.play();
+          },
+        ),
+      ],
     );
   }
 }
