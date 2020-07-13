@@ -3,7 +3,7 @@
 Vix flutter application
 
 <img src="https://github.com/lashket/vix-flutter/blob/master/images/first.png" alt="Kitten"
-	title="A cute kitten" width="150" height="100" />
+	title="A cute kitten" width="30%"  />
 
 ![Main screen](https://github.com/lashket/vix-flutter/blob/master/images/first.png) <!-- .element height="30%" width="30%" -->
 ![Movie info screen](https://github.com/lashket/vix-flutter/blob/master/images/second.png) <!-- .element height="30%" width="30%" -->
