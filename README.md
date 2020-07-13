@@ -2,9 +2,9 @@
 
 Vix flutter application
 
-![Main screen](https://github.com/lashket/vix-flutter/images/first.png)
-![Movie info screen](https://github.com/lashket/vix-flutter/images/second.png)
-![Search screen](https://github.com/lashket/vix-flutter/images/third.png)
+![Main screen](https://github.com/lashket/vix-flutter/tree/master/images/first.png)
+![Movie info screen](https://github.com/lashket/vix-flutter/tree/master/images/second.png)
+![Search screen](https://github.com/lashket/vix-flutter/tree/master/images/third.png)
 
 # Packages used in development:
  - **flutter_bloc** for easy implementation BLoC pattern [Link](https://pub.dev/packages/flutter_bloc)
