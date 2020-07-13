@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<SearchScreenBloc>(create: (context) => SearchScreenBloc()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
             primaryColor: Color(0xff182837),
