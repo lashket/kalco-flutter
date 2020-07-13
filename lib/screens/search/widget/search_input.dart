@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vix/bloc/search/search_screen_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vix/bloc/search/search_screen_event.dart';
 
 class SearchInput extends StatefulWidget {
   @override
@@ -14,6 +17,10 @@ class _SearchInputState extends State<SearchInput> {
         fontSize: 18.0
       ),
       onChanged: (text) {
+        if(text.length > 2) {
+          BlocProvider.of<SearchScreenBloc>(context)
+              .add(LoadFilmsByQuery(query: text));
+        }
       },
       decoration: InputDecoration(
         border: InputBorder.none,

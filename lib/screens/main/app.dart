@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:vix/bloc/main/main_screen_bloc.dart';
 import 'package:vix/bloc/movie/movie_screen_bloc.dart';
 import 'package:vix/bloc/player/player_screen_bloc.dart';
+import 'package:vix/bloc/search/search_screen_bloc.dart';
 import 'package:vix/navigation/destination.dart';
 import 'package:vix/screens/auth_screen.dart';
 import 'package:vix/screens/films/widget/films_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<MainScreenBloc>(create: (context) => MainScreenBloc()),
         BlocProvider<MovieScreenBloc>(create: (context) => MovieScreenBloc()),
         BlocProvider<PlayerScreenBloc>(create: (context) => PlayerScreenBloc()),
+        BlocProvider<SearchScreenBloc>(create: (context) => SearchScreenBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
