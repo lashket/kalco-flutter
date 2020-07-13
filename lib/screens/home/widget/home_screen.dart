@@ -38,8 +38,11 @@ class HomeScreen extends StatelessWidget {
           if(state is ItemsLoaded) {
             return SingleChildScrollView(
               child: Column(
-                children: <Widget>[HeaderSlider(
-                  movies: state.movies,
+                children: <Widget>[Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: HeaderSlider(
+                    movies: state.movies,
+                  ),
                 ), SectionsList(
                   sections: state.sectionItems,
                 )],

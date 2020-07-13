@@ -16,7 +16,7 @@ class HeaderSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2.5,
+      height: MediaQuery.of(context).size.height / 3.5,
       child: _buildSliderView(movies),
     );
   }
@@ -29,6 +29,7 @@ class HeaderSlider extends StatelessWidget {
       child: PageView(
         controller: PageController(
             initialPage: 1,
+          viewportFraction: 0.8
         ),
         children: movies.map((Movie movie) => HeaderSlide(movie)).toList(),
         physics: BouncingScrollPhysics(),
