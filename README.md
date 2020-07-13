@@ -1,7 +1,7 @@
 # vix_flutter
 
 Vix flutter application
-<div style="display:flex;">
+<p float="left">
 <img src="https://github.com/lashket/vix-flutter/blob/master/images/first.png" alt="Kitten"
 	title="A cute kitten" width="30%"  />
 
@@ -10,7 +10,7 @@ Vix flutter application
 
 <img src="https://github.com/lashket/vix-flutter/blob/master/images/third.png" alt="Kitten"
 	title="A cute kitten" width="30%"  />
-</div>
+</p>
 
 # Packages used in development:
  - **flutter_bloc** for easy implementation BLoC pattern [Link](https://pub.dev/packages/flutter_bloc)
