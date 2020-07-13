@@ -1,16 +1,8 @@
 # vix_flutter
 
 Vix flutter application
-<p float="left">
-<img src="https://github.com/lashket/vix-flutter/blob/master/images/first.png" alt="Kitten"
-	title="A cute kitten" width="30%"  />
 
-<img src="https://github.com/lashket/vix-flutter/blob/master/images/second.png" alt="Kitten"
-	title="A cute kitten" width="30%"  />
-
-<img src="https://github.com/lashket/vix-flutter/blob/master/images/third.png" alt="Kitten"
-	title="A cute kitten" width="30%"  />
-</p>
+<img src="https://github.com/lashket/vix-flutter/blob/master/images/first.png" alt="Kitten" title="A cute kitten" width="30%"  /> <img src="https://github.com/lashket/vix-flutter/blob/master/images/second.png" alt="Kitten" title="A cute kitten" width="30%"  /> <img src="https://github.com/lashket/vix-flutter/blob/master/images/third.png" alt="Kitten" title="A cute kitten" width="30%"  />
 
 # Packages used in development:
  - **flutter_bloc** for easy implementation BLoC pattern [Link](https://pub.dev/packages/flutter_bloc)
